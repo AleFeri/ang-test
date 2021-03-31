@@ -1,0 +1,19 @@
+<div id="myModal" class="modal">
+	<!-- Modal content -->
+	<div class="modal-content">
+		<div class="modal-header">
+			<span class="close" (click)="emit()">&times;</span>
+			<h2>Insert new Employee</h2>
+        </div>
+        <div class="modal-body">
+			<input id="inpId" type="number" placeholder="id" min="0" [(ngModel)]="employee.employeeId"/><br>
+			<input id="inpFirstName" type="text" placeholder="firstName" [(ngModel)]="employee.firstName"/><br>
+			<input id="inpLastName" type="text" placeholder="lastName" [(ngModel)]="employee.lastName"/><br>
+			<input id="inpEmail" type="email" placeholder="email" [(ngModel)]="employee.email"/><br>
+			<input id="inpPhone" type="text" placeholder="phone" style="margin-bottom: 10px" [(ngModel)]="employee.phone"/><br>
+		</div>
+		<div class="modal-footer">
+			<h2><button id="addNewEmployee" (click)="addEmp()">Aggiungi</button></h2>
+		</div>
+	</div>
+</div>

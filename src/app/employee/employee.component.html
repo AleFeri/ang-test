@@ -1,0 +1,26 @@
+<div class="header">
+    <h2>Manage <b>Employees</b></h2>
+    <button class="delete" id="delEmp" (click)="delete()">Delete</button>
+    <button class="add" id="addEmp" (click)="toggleAdd()">Add new Employee</button>
+</div>
+<div class="corpo">
+	<div class="elemento">
+		<div><b>Name</b></div>
+		<div><b>Surname</b></div>
+		<div><b>Email</b></div>
+		<div><b>Phone</b></div>
+		<div><b>Actions</b></div>
+	</div>
+	<div *ngFor="let item of data">
+		<div class='elemento even' id='elemento{{ item.employeeId }}'>
+			<div>{{ item.firstName }}</div>
+			<div>{{ item.lastName }}</div>
+			<div>{{ item.email }}</div>
+			<div>{{ item.phone }}</div>
+			<div>
+				<input type='checkbox' class='select' id='{{ item.employeeId }}' (change)="addToArr($event)" />
+			</div>
+		</div>
+	</div>
+</div>
+<app-modale *ngIf="adding" (newItemEvent)="completato($event)"></app-modale>

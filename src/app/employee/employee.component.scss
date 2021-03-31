@@ -1,0 +1,63 @@
+$even-bg: #d3d3d33a;
+
+.corpo {
+    width: auto;
+    height: auto;
+    min-height: 400px;
+    padding: 15px 25px 25px 25px;
+    background: #ffffff;
+    border-radius: 0px 0px 5px 5px;
+    
+    .elemento {
+        border: none;
+        border-top: 1px solid rgb(199, 198, 198);
+        width: auto;
+        height: auto;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 22.5% 22.5% 22.5% 22.5% 10%;
+
+        div {
+            width: auto;
+            height: auto;
+        }
+    }
+}
+
+.even {
+    background: $even-bg;
+}
+$text: #f6f6f6;
+$delete: #e61919;
+$add: #5cb85c;
+$header-bg: #002dac;
+
+button {
+    border-radius: 5px;
+    border: none;
+}
+
+.header {
+    background: $header-bg;
+    width: auto;
+    height: auto;
+    padding: 15px 25px 15px 25px;
+    border-radius: 5px 5px 0px 0px;
+    color: $text;
+    display: flex;
+    
+    button {
+        color: $text;
+    }
+    h2 {
+        margin: 0px;
+    }
+    .delete {
+        background: $delete;
+        margin-left: auto;
+        margin-right: 10px;
+    }
+    .add {
+        background: $add;
+    }
+}
