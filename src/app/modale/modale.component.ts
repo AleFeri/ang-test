@@ -9,6 +9,7 @@ import { Employee } from '../employee/employee';
 })
 export class ModaleComponent implements OnInit {
 	employee: Employee;
+	data: any;
 	@Output() newItemEvent = new EventEmitter<any>();
 
 	constructor(private restClient: DataRestClientService) {
@@ -22,12 +23,22 @@ export class ModaleComponent implements OnInit {
 		this.newItemEvent.emit({});
 	}
 	addEmp(): void {
-		this.restClient.creteEmployee(this.restClient.apiUrl, this.employee).subscribe(
-			(data) => {
-				console.log(data);
-				this.emit();
+		this.restClient.getDataRows(this.restClient.apiUrl).subscribe(
+			data => {
+				this.data = data;
+
+				let id = 0;
+				this.data.forEach((element: any) => {
+					id = element.employeeId;
+				});
+				this.employee.employeeId = ++id;
+
+				this.restClient.creteEmployee(this.restClient.apiUrl, this.employee).subscribe(
+					() => this.emit(),
+					error => console.log(error)
+				);
 			},
 			error => console.log(error)
-		);
+		)
 	}
 }

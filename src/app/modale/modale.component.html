@@ -6,7 +6,7 @@
 			<h2>Insert new Employee</h2>
         </div>
         <div class="modal-body">
-			<input id="inpId" type="number" placeholder="id" min="0" [(ngModel)]="employee.employeeId"/><br>
+			<input id="inpId" type="number" placeholder="id" min="0" [(ngModel)]="employee.employeeId" hidden/><br>
 			<input id="inpFirstName" type="text" placeholder="firstName" [(ngModel)]="employee.firstName"/><br>
 			<input id="inpLastName" type="text" placeholder="lastName" [(ngModel)]="employee.lastName"/><br>
 			<input id="inpEmail" type="email" placeholder="email" [(ngModel)]="employee.email"/><br>
